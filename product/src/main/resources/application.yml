@@ -1,0 +1,11 @@
+server.port: 8801
+clients:
+  review:
+    url: http://localhost:8802
+
+resilience4j.circuitbreaker:
+  instances:
+    reviewCB:
+      register-health-indicator: true
+      minimum-number-of-calls: 2
+      sliding-window-size: 4
