@@ -9,3 +9,16 @@ resilience4j.circuitbreaker:
       register-health-indicator: true
       minimum-number-of-calls: 2
       sliding-window-size: 4
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus
+    enabled-by-default: false
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    prometheus:
+      enabled: true
